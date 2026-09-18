@@ -22,10 +22,10 @@
 // DOM DINAMIS
 const container = document.querySelector("#container");
 const card = document.createElement("div");
-const card2 = document.createElement("div")
+const card2 = document.createElement("div");
 
 card.textContent = "Data Mahasiswa Fasilkom";
-card2.textContent = "2026"
+card2.textContent = "2026";
 card.classList.add("card");
 card2.classList.add("card");
 
@@ -34,23 +34,64 @@ container.appendChild(card2);
 
 // Skill Input
 // id form input text
-const skillinput = document.querySelector("#skillinput")
-const addSkill = document.querySelector("#addSkill")
-const skilllist = document.querySelector("#skilllist")
+const skillinput = document.querySelector("#skillinput");
+const addSkill = document.querySelector("#addSkill");
+const skilllist = document.querySelector("#skilllist");
 
 // event menambahkan data skill
 addSkill.addEventListener("click", () => {
-    const skill = skillinput.value
+  const skill = skillinput.value;
 
-    if (skill === ""){
-        return
+  if (skill === "") {
+    return;
+  }
+
+  const li = document.createElement("li");
+
+  li.textContent = skill;
+
+  skilllist.appendChild(li);
+
+  skillinput.value = "";
+});
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then(response => response.json())
+// .then(users => users.forEach(user => {
+//     container.innerHTML += `
+//     <div class = "card">
+//         <h2>${user.name}</h2>
+//     </div>
+//     ` // backtick
+// }))
+
+const statusMsg = document.querySelector("#statusMsg");
+
+// asynchronous => await
+async function getUsers() {
+  try {
+    statusMsg.textContent = "Loading...";
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    if (!response.ok) {
+      throw new Error("Failed load data");
     }
 
-    const li = document.createElement("li")
+    const users = await response.json();
 
-    li.textContent = skill
+    statusMsg.textContent = "";
 
-    skilllist.appendChild(li)
-
-    skillinput.value = ""
-})
+    users.forEach((user) => {
+      container.innerHTML += `
+        <div class = "card">
+            <h2>${user.name}</h2>
+        </div>
+    `; // backtick
+    });
+  } catch (error) {
+    statusMsg.textContent = `Terjadi Kesalahan: ${error.message}`;
+  }
+}
+// Panggil function getUsers
+getUsers()
