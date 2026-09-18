@@ -5,48 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML | PWEB</title>
+    <link rel="stylesheet" href="style.css" /> <!-- Link CSS -->
 </head>
-<style>
-    .text-icon{
-        font-size: 40px;
-    }
-
-    header .text-span{
-        color: goldenrod;
-    }
-
-    .nav-links{
-        background-color: brown;
-    }
-
-    .nav-links p{
-        padding-top: 10px;
-        padding-left: 10px;
-    }
-
-    .nav-links li{
-        display: inline-flex;
-        text-align: center;
-        color: white;
-        margin-left: 10px;
-        padding-bottom: 10px;
-    }
-
-    .hero-section{
-        padding: 10px;
-        background: gray;
-    }
-
-</style>
 <body>
     <!-- Header -->
     <header>
         <nav class="nav-links">
-            <p class="text-icon">PEMROGRAMAN <span class="text-span"> WEBSITE</span></p>
-            <li><a href="#beranda"> Beranda</a></li>
-            <li><a href="#artikel"> Artikel</a></li>
-            <li><a href="#tentang"> Tentang</a></li>
-            <li><a href="https://unej.ac.id/" target="_blank"> UNEJ</a></li>
+            <div class="logo">
+                <p class="text-icon" id="text-icon">PEMROGRAMAN <span class="text-span"> WEBSITE</span></p>
+            </div>
+            <div class="nav-list">
+                <li><a href="#beranda"> Beranda</a></li>
+                <li><a href="#artikel"> Artikel</a></li>
+                <li><a href="#tentang"> Tentang</a></li>
+                <li><a href="https://unej.ac.id/" target="_blank"> UNEJ</a></li>
+            </div>
         </nav>
     </header>
 
@@ -55,40 +28,30 @@
         <!-- HERO SECTION -->
         <section class="hero-section" id="beranda">
             <h1 class="header">SELAMAT DATANG</h1>
-            <img src="https://extremeguide.pro/wp-content/uploads/2025/04/article-k2.jpg.webp" alt="" width="400px" height="200px">
+            <button id="btn-ubah">Edit</button>
+            <!-- <img src="https://extremeguide.pro/wp-content/uploads/2025/04/article-k2.jpg.webp" alt="" width="400px" height="200px"> -->
             <p class="text-span">
                 Ajang seni mahasiswa tingkat nasional paling bergengsi di Indonesia,
                 diikuti kontingen dari sekitar 34 provinsi. Tahun ini dipusatkan di
                 Universitas Jember.
             </p>
         </section>
- 
-        <!-- ARTIKEL SECTION -->
-         <section class="hero-section" id="artikel">
-            <h1>ARTIKEL</h1>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, ex nulla nihil quae necessitatibus consequuntur tempora sequi culpa quibusdam cum odio provident doloremque consequatur excepturi delectus in quia rerum molestiae.
-            </article>
-         </section>
 
-        <!-- TENTANG SECTION -->
-         <section class="hero-section" id="tentang">
-            <h1>TENTANG</h1>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, ex nulla nihil quae necessitatibus consequuntur tempora sequi culpa quibusdam cum odio provident doloremque consequatur excepturi delectus in quia rerum molestiae.
-            </article>
-         </section>
-    </main>
+        <!-- ABOUT -->
+        <section class="hero-section" id="beranda">
+            <div id="container"></div>
 
-    <!-- FOOTER -->
-     <footer class="hero-section">
-        <h1>PEMROGRAMAN WEBSITE</h1>
-        <div>
-            <li>Beranda</li>
-            <li>Artikel</li>
-            <li>Tentang</li>
-        </div>
-     </footer>
+            <h2>Skill Saya</h2>
+            
+            <input type="text" id="skillinput" placeholder="Masukan Skill">
+            <button id="addSkill">Tambah Skill</button>
+
+            <ul id="skilllist"></ul>
+
+        </section>
+
+
+     <script src="./script.js"></script>
 </body>
 
 </html>
