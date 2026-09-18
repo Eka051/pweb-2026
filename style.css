@@ -1,0 +1,92 @@
+/* Ubah struktur default web */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* untuk tinggi setara dengan layar */
+section{
+    height: 100vh;
+}
+
+.text-icon{
+    font-size: 40px;
+}
+
+header .text-span{
+    color: goldenrod;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-between;
+    background-color: brown;
+    padding: 20px;
+    /* margin: 20px; */
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    /* margin: 0 auto;  */
+    align-items: center; 
+}
+
+.nav-list li{
+    font-size: 20px;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+}
+
+.hero-section{
+    padding: 10px;
+    background: gray;
+    text-align: center;
+}
+
+.hero-section h1{
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+
+.hero-section img{
+    border-radius: 20px;
+    border: 5px solid black;
+    width: 500px;
+    height: auto;
+}
+
+@media (min-width: 600px) {
+    * {
+        max-width: screen;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+
+    .text-icon {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .hero-section img{
+        width: 100%;
+        border-radius: 20px;
+        border: 5px solid black;
+    }
+
+    footer h1{
+        font-size: 40px;
+    }
+}
